@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  height: 1000px;
+}
+
+/* <----------------------common----------------------> */
+a {
+  text-decoration: none;
+}
+
+.main_content {
+  width: 1635px;
+  max-width: calc(100% - 100px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* <----------------------header----------------------> */
+.header {
+  background-color: white;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.fixed {
+  position: sticky;
+  top: 15px;
+}
+.header .body_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo img {
+  width: 80px;
+}
+
+.header_nav ul {
+  display: flex;
+  /* gap: 55px; */
+}
+
+.header_nav a {
+  color: #454545;
+  padding: 13px 25px; /* tăng trải nghiệm người dùng - vùng chọn được lớn hơn thay vì margin */
+}
+
+.header_nav a:hover {
+  color: #000;
+  text-shadow: 0.2px 0 0 #000; /* giúp không bị giật text khi hover */
+}
+
+.header_search {
+  position: relative;
+  display: flex;
+  width: 230px;
+}
+
+.search_input {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 8px 36px;
+  border: 1px solid #ccc;
+  border-radius: 36px;
+}
+
+.search-icon {
+  width: 20px;
+  position: absolute;
+  inset: 8px 10px;
+}
+
+.header_cart img {
+  width: 25px;
+}
+
+.header_user {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.header_user img {
+  width: 35px;
+}
