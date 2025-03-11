@@ -9,7 +9,6 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
-  height: 1000px;
 }
 
 /* <----------------------common----------------------> */
@@ -20,21 +19,21 @@ a {
 .main_content {
   width: 1635px;
   max-width: calc(100% - 100px);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px auto;
 }
 /* <----------------------header----------------------> */
 .header {
   background-color: white;
   border-bottom: 1px solid #d4d4d4;
+  display: flex;
 }
 
 .fixed {
   position: sticky;
-  top: 15px;
+  top: 0;
+  z-index: 1; /* hiển thị phía trên cùng */
 }
+
 .header .body_header {
   display: flex;
   justify-content: space-between;
@@ -74,6 +73,10 @@ a {
   border-radius: 36px;
 }
 
+.search_input:focus {
+  outline: none;
+}
+
 .search-icon {
   width: 20px;
   position: absolute;
@@ -92,4 +95,15 @@ a {
 
 .header_user img {
   width: 35px;
+}
+
+/* image slider */
+.image-slider {
+  margin-top: 24px;
+}
+.carousel-item img {
+  height: 400px;
+  max-width: calc(100% - 230px);
+  margin: 0 auto;
+  object-fit: contain; /* Cắt ảnh vừa khung */
 }
