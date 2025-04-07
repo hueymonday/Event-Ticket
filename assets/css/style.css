@@ -54,6 +54,17 @@ a {
 .header_logo img {
   width: 80px;
   transition: 0.3s;
+  animation: ani-logo 2.4s ease-in-out infinite;
+}
+
+@keyframes ani-logo {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .header_logo img:hover {
@@ -71,11 +82,12 @@ a {
 .header_nav a {
   color: #454545;
   padding: 13px 25px; /* tăng trải nghiệm người dùng - vùng chọn được lớn hơn thay vì margin */
+  transition: 0.3s;
 }
 
 .header_nav a:hover {
-  color: #000;
-  text-shadow: 0.2px 0 0 #000; /* giúp không bị giật text khi hover */
+  color: var(--orange);
+  text-shadow: 0.2px 0 0 var(--third-orange); /* giúp không bị giật text khi hover */
 }
 
 .header_search {
@@ -135,7 +147,7 @@ a {
 
 .carousel-item img {
   height: 400px;
-  object-fit: 100% 100%; /* Cắt ảnh vừa khung */
+  object-fit: cover; /* Cắt ảnh vừa khung */
 }
 
 /* event list */
@@ -172,8 +184,10 @@ a {
 .event-list .event-list-content {
   display: flex;
   gap: 20px;
-  overflow: hidden; /* Ẩn thanh cuộn */
-  overflow-x: auto; /* Cho phép cuộn ngang */
+  padding: 15px;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: visible;
   white-space: nowrap;
   scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
 }
@@ -189,6 +203,26 @@ a {
   width: 400px;
   height: auto;
   padding-top: 20px;
+  transition: 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.event-list .event-item:hover {
+  padding: 15px 15px 35px 15px;
+  box-shadow: 2px 2px 15px #e1e1e17e;
+  border-radius: 25px;
+  backdrop-filter: blur(70px);
+  z-index: 10;
+}
+
+.event-list-content:hover {
+  transform: scale(1);
+}
+.event-list-content:hover > :not(:hover) {
+  filter: blur(0.3px);
+  opacity: 0.5;
+  transform: scale(0.8);
 }
 
 .event-list .event-item img {
@@ -218,6 +252,56 @@ a {
 .event-list .event-item #price {
   font-weight: 600;
   color: var(--blue);
+}
+
+/* return_btn */
+.return_btn {
+  width: 50px;
+  height: 50px;
+  background-color: #ff7124;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  visibility: hidden;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(50px) rotate(-180deg);
+  transition: all 0.5s;
+}
+
+.return_btn .fa-arrow-up {
+  font-size: 2.6rem;
+  color: white;
+  animation: ani-return-icon 3s infinite;
+}
+
+.return_btn.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+.return_btn:hover {
+  transform: scale(1.1);
+  animation: ani-logo 1s infinite;
+}
+
+@keyframes ani-return-icon {
+  0%,
+  100% {
+    transform: translateY(-5px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* <----------------------footer----------------------> */
