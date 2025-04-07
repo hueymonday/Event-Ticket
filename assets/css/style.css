@@ -9,6 +9,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
 :root {
@@ -134,6 +135,87 @@ a {
 }
 
 .carousel-item img {
-  height: 100%;
-  object-fit: contain; /* Cắt ảnh vừa khung */
+  height: 400px;
+  object-fit: 100% 100%; /* Cắt ảnh vừa khung */
+}
+
+/* event list */
+.event-list {
+}
+
+.event-list .event-list-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+
+.event-list .event-list-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.event-list-header .event-list-header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-list-header .event-list-header-right a {
+  color: #6d6d6d;
+}
+
+.event-list-header .event-list-header-right img {
+  width: 8px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.event-list .event-list-content {
+  display: flex;
+  gap: 20px;
+  overflow: hidden; /* Ẩn thanh cuộn */
+  overflow-x: auto; /* Cho phép cuộn ngang */
+  white-space: nowrap;
+  scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+}
+
+.event-list .event-list-content::-webkit-scrollbar {
+  display: none; /* Ẩn thanh cuộn trên Chrome, Safari */
+}
+
+.event-list .event-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  height: auto;
+  padding-top: 20px;
+}
+
+.event-list .event-item img {
+  width: 350px;
+  height: 200px;
+  object-fit: 100% 100%;
+  border-radius: 25px;
+}
+
+.event-list .event-item h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--orange);
+  line-height: 1.5em;
+  height: calc(1.5em * 2);
+  -webkit-line-clamp: 2;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.event-list .event-item span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.event-list .event-item #price {
+  color: var(--blue);
 }
