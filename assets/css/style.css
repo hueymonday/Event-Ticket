@@ -140,12 +140,12 @@ a {
 
 /* event list */
 .event-list {
+  margin-top: 70px;
 }
 
 .event-list .event-list-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
 }
 
 .event-list .event-list-header h2 {
@@ -200,7 +200,7 @@ a {
 
 .event-list .event-item h3 {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--orange);
   line-height: 1.5em;
   height: calc(1.5em * 2);
@@ -216,5 +216,14 @@ a {
 }
 
 .event-list .event-item #price {
+  font-weight: 600;
   color: var(--blue);
+}
+
+/* <----------------------footer----------------------> */
+footer {
+  width: 100vw;
+  height: 200px;
+  margin-top: 50px;
+  background-color: var(--blue);
 }
